@@ -9,6 +9,7 @@ pipeline {
                 sh "ls"
                 echo "${env.WORKSPACE}"
                 script{ datas = readYaml (file: "${env.WORKSPACE}/test.yaml") }
+                echo datas
 
             }
         }
