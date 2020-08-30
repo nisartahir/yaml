@@ -7,6 +7,7 @@ pipeline {
                 echo 'Read YAML..'
                 checkout scm
                 sh "ls"
+                echo "${env.WORKSPACE}"
                 script{ datas = readYaml (file: "${env.WORKSPACE}/test.yml") }
 
             }
