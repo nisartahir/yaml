@@ -9,7 +9,8 @@ pipeline {
                 sh "ls"
                 echo "${env.WORKSPACE}"
                 script{ yamlData = readYaml (file: "${env.WORKSPACE}/test.yaml") }
-                echo yamlData.components.security_services.component_user.toString()
+                dspComponent = "security_services"
+                echo yamlData.components."${dspComponent}".component_user.toString()
 
             }
         }
