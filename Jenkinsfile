@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Read YAML..'
-                scm checkout
+                checkout scm
                 script{ datas = readYaml (file: 'test.yml') }
 
             }
