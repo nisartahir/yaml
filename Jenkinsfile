@@ -2,25 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Test Yaml') {
             steps {
                 echo 'Read YAML..'
                 checkout scm
                 sh "ls"
                 echo "${env.WORKSPACE}"
-                script{ datas = readYaml (file: "${env.WORKSPACE}/test.yaml") }
-                echo datas.components.security_services.component_user.toString()
+                script{ yamlData = readYaml (file: "${env.WORKSPACE}/test.yaml") }
+                echo yamlData.components.security_services.component_user.toString()
 
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
