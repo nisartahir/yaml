@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Read YAML..'
+                script{ datas = readYaml (file: 'test.yml') }
+
             }
         }
         stage('Test') {
