@@ -8,7 +8,7 @@ pipeline {
                 checkout scm
                 sh "ls"
                 echo "${env.WORKSPACE}"
-                script{ datas = readYaml (file: "${env.WORKSPACE}/test.yml") }
+                script{ datas = readYaml (file: "${env.WORKSPACE}/test.yaml") }
 
             }
         }
