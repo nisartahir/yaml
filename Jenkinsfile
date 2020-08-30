@@ -6,7 +6,10 @@ pipeline {
             steps {
                 echo 'Read YAML..'
                 checkout scm
-                script{ datas = readYaml (file: 'test.yml') }
+                script{ 
+                    ls 
+                    datas = readYaml (file: 'test.yml')
+                     }
 
             }
         }
